@@ -1,0 +1,93 @@
+.demo-essentiel-root { font-family: 'Inter', sans-serif; color: #2c3a30; background: #fbf8f2; }
+
+.de-header {
+  padding: 24px 0; border-bottom: 1px solid rgba(44,58,48,0.08);
+  position: sticky; top: 0;
+  background: rgba(251,248,242,0.95);
+  backdrop-filter: blur(8px); z-index: 20;
+}
+.de-header-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.de-logo { font-size: 18px; font-weight: 700; color: #2c3a30; }
+.de-phone-btn {
+  background: #4a6b5c; color: #fff;
+  padding: 10px 18px; border-radius: 999px;
+  font-size: 14px; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.de-phone-btn:hover { background: #3a5a4c; }
+
+.de-hero { padding: 80px 24px 60px; max-width: 1100px; margin: 0 auto; text-align: center; }
+.de-hero h1 {
+  font-size: clamp(30px, 5vw, 48px); font-weight: 700;
+  letter-spacing: -0.02em; margin-bottom: 16px; color: #1e2b23;
+}
+.de-hero p { font-size: 18px; color: #5a6a60; max-width: 560px; margin: 0 auto 32px; }
+.de-hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.de-btn {
+  padding: 14px 26px; border-radius: 8px; font-weight: 500; font-size: 15px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.de-btn-primary { background: #4a6b5c; color: #fff; }
+.de-btn-primary:hover { background: #3a5a4c; }
+.de-btn-outline { background: #fff; border: 1px solid #c9d4cc; color: #2c3a30; }
+.de-btn-outline:hover { border-color: #4a6b5c; }
+
+.de-section { padding: 72px 24px; }
+.de-section-alt { background: #fff; }
+.de-inner { max-width: 1100px; margin: 0 auto; }
+.de-section h2 { font-size: clamp(24px, 3.5vw, 34px); margin-bottom: 16px; letter-spacing: -0.015em; }
+.de-section-lead { font-size: 17px; color: #5a6a60; max-width: 600px; margin-bottom: 40px; }
+
+.de-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.de-service { padding: 28px; background: #fff; border: 1px solid #e5e5df; border-radius: 12px; }
+.de-section-alt .de-service { background: #fbf8f2; border-color: #ecebe5; }
+.de-service h3 { font-size: 17px; margin-bottom: 8px; color: #1e2b23; }
+.de-service p { font-size: 14.5px; color: #5a6a60; }
+
+.de-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.de-project {
+  aspect-ratio: 4/3; border-radius: 12px;
+  background: linear-gradient(135deg, #d4dcd2, #b8c4b8);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 20px; color: #fff; position: relative; overflow: hidden;
+}
+.de-project::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 60%);
+}
+.de-project > * { position: relative; z-index: 2; }
+.de-project h4 { font-size: 16px; margin-bottom: 2px; }
+.de-project p { font-size: 13px; opacity: 0.9; }
+
+.de-testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.de-testimonial { padding: 28px; background: #fff; border-radius: 12px; border: 1px solid #e5e5df; }
+.de-testimonial p { font-style: italic; color: #3a4a40; margin-bottom: 16px; }
+.de-testimonial cite { font-style: normal; font-size: 14px; font-weight: 600; color: #4a6b5c; }
+
+.de-areas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.de-area-tag {
+  padding: 6px 14px; background: #e8efe9; color: #4a6b5c;
+  border-radius: 999px; font-size: 13.5px; font-weight: 500;
+}
+
+.de-contact { background: #4a6b5c; color: #fff; padding: 72px 24px; text-align: center; }
+.de-contact h2 { color: #fff; margin-bottom: 16px; }
+.de-contact p { color: rgba(255,255,255,0.85); max-width: 520px; margin: 0 auto 32px; font-size: 17px; }
+.de-contact .de-btn-primary { background: #fff; color: #4a6b5c; }
+.de-contact .de-btn-primary:hover { background: #f0f0ec; }
+
+.de-footer { text-align: center; padding: 32px 24px; font-size: 13px; color: #8a958c; background: #fbf8f2; }
+
+.de-mobile-phone {
+  display: none; position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 30;
+}
+.de-mobile-phone .de-phone-btn { width: 100%; justify-content: center; padding: 16px; font-size: 16px; }
+
+@media (max-width: 720px) {
+  .de-mobile-phone { display: block; }
+  .de-hero { padding: 56px 24px 40px; }
+  .de-section { padding: 56px 24px; }
+}
