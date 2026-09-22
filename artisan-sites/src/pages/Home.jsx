@@ -138,24 +138,24 @@ export default function Home() {
               la meilleure façon de comprendre immédiatement la progression.
             </p>
             <div className="demos-teaser">
-              <Link to="/demo/essentiel" className="demo-teaser-card demo-essentiel">
+              <a href={`${import.meta.env.BASE_URL}demo/essentiel`} target="_blank" rel="noopener noreferrer" className="demo-teaser-card demo-essentiel">
                 <div>
                   <h3>Essentiel</h3>
                   <p>Simple, direct, rassurant</p>
                 </div>
-              </Link>
-              <Link to="/demo/plus" className="demo-teaser-card demo-plus">
+              </a>
+              <a href={`${import.meta.env.BASE_URL}demo/plus`} target="_blank" rel="noopener noreferrer" className="demo-teaser-card demo-plus">
                 <div>
                   <h3>Plus</h3>
                   <p>Éditorial, complet, professionnel</p>
                 </div>
-              </Link>
-              <Link to="/demo/pro" className="demo-teaser-card demo-pro">
+              </a>
+              <a href={`${import.meta.env.BASE_URL}demo/pro`} target="_blank" rel="noopener noreferrer" className="demo-teaser-card demo-pro">
                 <div>
                   <h3>Pro</h3>
                   <p>Immersif, premium, mémorable</p>
                 </div>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
