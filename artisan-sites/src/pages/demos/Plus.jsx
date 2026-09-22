@@ -1,8 +1,18 @@
 import DemoNavigation from '../../components/DemoNavigation.jsx';
 import { demoArtisan as a } from '../../data/demoArtisan.js';
+import { demoImages } from '../../data/demoImages.js';
 import '../../styles/demo-plus.css';
 
 export default function Plus() {
+  const portfolioImages = [
+    demoImages.plusPortfolio1,
+    demoImages.plusPortfolio2,
+    demoImages.plusPortfolio3,
+    demoImages.plusPortfolio4,
+    demoImages.plusPortfolio5,
+    demoImages.plusPortfolio6,
+  ];
+
   return (
     <div className="demo-plus-root">
       <DemoNavigation />
@@ -19,7 +29,17 @@ export default function Plus() {
         </div>
       </nav>
 
-      <section className="dp-hero">
+      {/* HERO avec image de fond */}
+      <section
+        className="dp-hero"
+        style={{
+          backgroundImage: `linear-gradient(rgba(250,247,242,0.88), rgba(250,247,242,0.96)), url(${demoImages.plusHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          borderRadius: 12,
+          marginTop: 16,
+        }}
+      >
         <h1>
           Le savoir-faire d'un artisan,<br />
           <em>au service de votre confort.</em>
@@ -49,6 +69,7 @@ export default function Plus() {
         </div>
       </section>
 
+      {/* SERVICES */}
       <section className="dp-section" style={{ background: '#fff' }} id="services">
         <div className="dp-inner">
           <p className="dp-eyebrow">Prestations</p>
@@ -65,13 +86,22 @@ export default function Plus() {
         </div>
       </section>
 
+      {/* RÉALISATIONS avec images */}
       <section className="dp-section" id="realisations">
         <div className="dp-inner">
           <p className="dp-eyebrow">Réalisations</p>
           <h2>Quelques projets <em>récents</em>.</h2>
           <div className="dp-portfolio">
-            {a.projects.slice(0, 6).map((p) => (
-              <div key={p.title} className="dp-portfolio-item">
+            {a.projects.slice(0, 6).map((p, i) => (
+              <div
+                key={p.title}
+                className="dp-portfolio-item"
+                style={{
+                  backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.65), transparent 55%), url(${portfolioImages[i]})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
                 <h4>{p.title}</h4>
                 <span>{p.place} · {p.year} · {p.tag}</span>
               </div>
@@ -80,6 +110,7 @@ export default function Plus() {
         </div>
       </section>
 
+      {/* ATELIER avec image */}
       <section className="dp-section" id="atelier" style={{ background: '#fff' }}>
         <div className="dp-inner">
           <div className="dp-story">
@@ -94,11 +125,19 @@ export default function Plus() {
                 chantier.
               </p>
             </div>
-            <div className="dp-story-visual" />
+            <div
+              className="dp-story-visual"
+              style={{
+                backgroundImage: `url(${demoImages.plusAtelier})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
           </div>
         </div>
       </section>
 
+      {/* TÉMOIGNAGES */}
       <section className="dp-section">
         <div className="dp-inner">
           <p className="dp-eyebrow">Témoignages</p>
@@ -114,6 +153,7 @@ export default function Plus() {
         </div>
       </section>
 
+      {/* CTA CONTACT */}
       <section className="dp-cta" id="contact">
         <div className="dp-inner">
           <h2>Un projet en tête ? <em style={{ color: 'var(--dp-accent)' }}>Parlons-en.</em></h2>
