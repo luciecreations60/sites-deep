@@ -6,11 +6,13 @@ import Contact from './pages/Contact.jsx';
 import Essentiel from './pages/demos/Essentiel.jsx';
 import Plus from './pages/demos/Plus.jsx';
 import Pro from './pages/demos/Pro.jsx';
+import BackToTop from './components/BackToTop.jsx';
 
 export default function App() {
   return (
     <>
       <ScrollToTop />
+      <BackToTop />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/demos" element={<Demos />} />
