@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DemoNavigation from '../../components/DemoNavigation.jsx';
 import { demoArtisan as a } from '../../data/demoArtisan.js';
+import { demoImages } from '../../data/demoImages.js';
 import '../../styles/demo-pro.css';
 
 export default function Pro() {
@@ -12,6 +13,14 @@ export default function Pro() {
     { id: 'complet', label: 'Projet complet (plomberie + chauffage)', price: 'Sur devis personnalisé' },
   ];
 
+  const projectImages = [
+    demoImages.proProject1,
+    demoImages.proProject2,
+    demoImages.proProject3,
+    demoImages.proProject4,
+    demoImages.proProject1,
+  ];
+
   return (
     <div className="demo-pro-root">
       <DemoNavigation />
@@ -21,7 +30,15 @@ export default function Pro() {
         <button className="dpr-menu-btn">Menu</button>
       </nav>
 
-      <section className="dpr-hero">
+      {/* HERO IMMERSIF avec image */}
+      <section
+        className="dpr-hero"
+        style={{
+          backgroundImage: `linear-gradient(rgba(14,13,11,0.75), rgba(14,13,11,0.92)), url(${demoImages.proHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         <div className="dpr-hero-inner">
           <p className="dpr-hero-eyebrow">Artisan plombier · {a.city} · depuis {a.since}</p>
           <h1>
@@ -38,6 +55,7 @@ export default function Pro() {
         <div className="dpr-scroll-hint">Scroll</div>
       </section>
 
+      {/* SERVICES */}
       <section className="dpr-section">
         <div className="dpr-inner">
           <div className="dpr-section-head">
@@ -58,6 +76,7 @@ export default function Pro() {
         </div>
       </section>
 
+      {/* PROJETS avec images */}
       <section className="dpr-section">
         <div className="dpr-inner">
           <div className="dpr-section-head">
@@ -74,13 +93,21 @@ export default function Pro() {
                   <h3>{p.title}</h3>
                   <div className="dpr-project-meta">{p.place} · {p.year} · {p.tag}</div>
                 </div>
-                <div className="dpr-project-visual" />
+                <div
+                  className="dpr-project-visual"
+                  style={{
+                    backgroundImage: `url(${projectImages[i]})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                />
               </article>
             ))}
           </div>
         </div>
       </section>
 
+      {/* AVANT / APRÈS avec images */}
       <section className="dpr-section">
         <div className="dpr-inner">
           <div className="dpr-section-head">
@@ -88,12 +115,31 @@ export default function Pro() {
             <h2 className="dpr-section-title">Ce qui <em>change</em>.</h2>
           </div>
           <div className="dpr-ba">
-            <div className="dpr-ba-item"><span>Avant</span></div>
-            <div className="dpr-ba-item"><span>Après</span></div>
+            <div
+              className="dpr-ba-item"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.65)), url(${demoImages.proAvant})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <span>Avant</span>
+            </div>
+            <div
+              className="dpr-ba-item"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.55)), url(${demoImages.proApres})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <span>Après</span>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* ESTIMATEUR */}
       <section className="dpr-section">
         <div className="dpr-inner">
           <div className="dpr-section-head">
@@ -129,6 +175,7 @@ export default function Pro() {
         </div>
       </section>
 
+      {/* CTA FINAL */}
       <section className="dpr-final" id="contact">
         <h2>
           Un projet mérite<br />
