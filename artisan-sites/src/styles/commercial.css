@@ -247,3 +247,12 @@
 @media (max-width: 780px) {
   .demo-detail-row { grid-template-columns: 1fr !important; }
 }
+
+.btn-accent {
+  background: #b8663a !important;
+  color: #ffffff !important;
+  border: none;
+}
+.btn-accent:hover {
+  background: #96502a !important;
+}
