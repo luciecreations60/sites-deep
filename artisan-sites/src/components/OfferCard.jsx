@@ -31,7 +31,14 @@ export default function OfferCard({ offer }) {
       </ul>
 
       <div className="offer-actions">
-        <Link to={offer.demoUrl} className="btn btn-primary">{offer.ctaLabel}</Link>
+<a
+  href={`${import.meta.env.BASE_URL}${offer.demoUrl.replace(/^\//, '')}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn btn-primary"
+>
+  {offer.ctaLabel}
+</a>
         <Link to="/contact" state={{ offer: offer.name }} className="btn btn-outline">
           Me renseigner
         </Link>
