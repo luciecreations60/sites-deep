@@ -17,7 +17,15 @@
 .dp-nav-links a { color: #2b2620; transition: color 0.2s; }
 .dp-nav-links a:hover { color: var(--dp-accent); }
 
-.dp-hero { padding: 100px 32px 80px; max-width: 1200px; margin: 0 auto; }
+.dp-hero {
+  padding: 100px 32px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .dp-hero h1 {
   font-size: clamp(40px, 7vw, 88px); font-weight: 700;
   letter-spacing: -0.035em; line-height: 1.02;
@@ -95,25 +103,33 @@
 .dp-portfolio {
   display: grid; grid-template-columns: repeat(12, 1fr);
   gap: 16px; margin-top: 56px;
-}
 .dp-portfolio-item {
-  grid-column: span 6; aspect-ratio: 4/3;
-  border-radius: 6px; overflow: hidden; position: relative;
-  background: linear-gradient(135deg, #c98d63, #8a5a3a);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 28px; color: #fff; cursor: pointer;
-  transition: transform 0.4s ease;
+  grid-column: span 6;
+  aspect-ratio: 4/3;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .dp-portfolio-item:nth-child(1) { grid-column: span 8; aspect-ratio: 16/10; }
 .dp-portfolio-item:nth-child(4) { grid-column: span 8; aspect-ratio: 16/10; }
-.dp-portfolio-item::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent 55%);
+.dp-portfolio-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px -20px rgba(43, 38, 32, 0.4);
 }
-.dp-portfolio-item > * { position: relative; z-index: 2; }
-.dp-portfolio-item:hover { transform: scale(1.015); }
+.dp-portfolio-item h4,
+.dp-portfolio-item span {
+  position: relative;
+  z-index: 2;
+}
 .dp-portfolio-item h4 { font-size: 22px; margin-bottom: 4px; letter-spacing: -0.015em; }
-.dp-portfolio-item span { font-size: 14px; opacity: 0.85; }
+.dp-portfolio-item span { font-size: 14px; opacity: 0.9; }
 
 @media (max-width: 720px) {
   .dp-portfolio-item { grid-column: span 12 !important; aspect-ratio: 4/3 !important; }
@@ -122,14 +138,23 @@
 .dp-story { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .dp-story-text p { font-size: 17px; line-height: 1.75; color: #4a423a; margin-bottom: 20px; }
 .dp-story-visual {
-  aspect-ratio: 4/5; border-radius: 6px;
-  background: linear-gradient(135deg, #a67b5b, #6a4a30);
+  aspect-ratio: 4/5;
+  border-radius: 6px;
   position: relative;
+  overflow: hidden;
+  min-height: 400px;
 }
 .dp-story-visual::after {
-  content: 'Atelier'; position: absolute;
-  bottom: 24px; left: 24px; color: #fff;
-  font-family: 'Georgia', serif; font-style: italic; font-size: 22px;
+  content: 'Atelier';
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  color: #fff;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 22px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  z-index: 2;
 }
 @media (max-width: 820px) { .dp-story { grid-template-columns: 1fr; gap: 40px; } }
 
