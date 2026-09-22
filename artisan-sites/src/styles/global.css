@@ -54,8 +54,8 @@ p { margin: 0; }
 .btn-ghost { color: var(--ink); padding: 12px 20px; }
 .btn-ghost:hover { color: var(--accent); }
 
-.section { padding: 96px 0; }
-.section-sm { padding: 64px 0; }
+.section { padding: 56px 0; }
+.section-sm { padding: 40px 0; }
 
 .eyebrow {
   font-size: 13px;
@@ -82,6 +82,6 @@ p { margin: 0; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 
 @media (max-width: 720px) {
-  .section { padding: 64px 0; }
-  .section-sm { padding: 40px 0; }
+  .section { padding: 44px 0; }
+  .section-sm { padding: 32px 0; }
 }
