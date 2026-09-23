@@ -351,3 +351,9 @@
     display: none;
   }
 }
+/* ========== ÉTAT ACTIF DU MENU NAVIGATION ========== */
+.dp-nav-links a.active {
+  color: var(--dp-accent);
+  border-bottom: 1px solid var(--dp-accent);
+  padding-bottom: 2px;
+}
