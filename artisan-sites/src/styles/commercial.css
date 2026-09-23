@@ -256,3 +256,15 @@
 .btn-accent:hover {
   background: #96502a !important;
 }
+/* Correction bouton CTA dans le header */
+.site-nav a.btn,
+.site-nav a.btn-primary {
+  color: var(--paper) !important;
+  background: var(--ink) !important;
+  padding: 12px 22px;
+  font-weight: 500;
+}
+.site-nav a.btn-primary:hover {
+  background: #0f1611 !important;
+  color: var(--paper) !important;
+}
